@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elite Recruiters Inc.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Elite Recruiters Inc.</div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#job-board" class="nav-link">Job Board</a></li>
+        <li><a href="#contact" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="page-section">
+      <h1>Welcome to Elite Recruiters Inc.</h1>
+      <p>
+        At Elite Recruiters Inc., we are dedicated to connecting top talent with leading organizations across diverse industries.
+        With our expertise in recruitment and human resources, we streamline the hiring process for both job seekers and employers.
+        Our commitment to integrity, efficiency, and excellence ensures lasting professional matches and successful careers.
+        <br><br>
+        Whether you're searching for your next challenge or seeking to expand your team, Elite Recruiters Inc. is here to support your journey every step of the way.
+      </p>
+      <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=900&q=80" alt="Professional Team" class="hero-img">
+    </section>
+
+    <section id="about" class="page-section alt-bg">
+      <h1>About Us</h1>
+      <p>
+        Our goal at Elite Recruiters Inc. is simple: to empower organizations and candidates by providing exceptional recruitment solutions.
+        We believe that the right person in the right position can transform a business and elevate careers.
+        <br><br>
+        Through our client-centric approach and deep market knowledge, we tailor our services to meet the unique needs of every partner.
+        We strive for transparency, open communication, and long-term relationships built on trust.
+      </p>
+    </section>
+
+    <section id="job-board" class="page-section">
+      <h1>Job Board</h1>
+      <p class="sample-note">
+        <strong>Note:</strong> The job postings below are sample data for demonstration purposes.
+      </p>
+      <div class="table-container">
+        <table class="job-table">
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Description</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Software Engineer</td>
+              <td>Design, develop, and maintain software applications for enterprise clients. Requires experience in JavaScript and cloud platforms.</td>
+              <td>New York, NY</td>
+            </tr>
+            <tr>
+              <td>Marketing Specialist</td>
+              <td>Execute marketing campaigns and manage social media channels. Creativity and strong communication skills are a must.</td>
+              <td>Remote</td>
+            </tr>
+            <tr>
+              <td>Data Analyst</td>
+              <td>Analyze and interpret complex data sets to inform business decisions. Proficiency in SQL and data visualization tools required.</td>
+              <td>San Francisco, CA</td>
+            </tr>
+            <tr>
+              <td>HR Coordinator</td>
+              <td>Support daily HR operations including recruitment, onboarding, and employee engagement activities.</td>
+              <td>Chicago, IL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="contact" class="page-section alt-bg">
+      <h1>Contact Us</h1>
+      <p>
+        Reach out to us for any inquiries or to discuss your recruitment needs.<br>
+        <strong>Contact Person:</strong> Andre<br>
+        <strong>Email:</strong> <a href="mailto:fakeemail@portfolio">fakeemail@portfolio</a><br>
+        <strong>Phone:</strong> (555) 123-4567<br>
+        <strong>Address:</strong> 123 Opportunity Ave, Suite 400, Cityville, XY 12345
+      </p>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Elite Recruiters Inc. | Designed by Andre
+  </footer>
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const anchor = document.querySelector(this.getAttribute('href'));
+        if(anchor) {
+          e.preventDefault();
+          window.scrollTo({
+            top: anchor.offsetTop - document.querySelector('header').offsetHeight,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    // Highlight active nav link on scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.page-section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - document.querySelector('header').offsetHeight - 10;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
